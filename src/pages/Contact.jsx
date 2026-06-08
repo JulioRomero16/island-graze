@@ -4,7 +4,7 @@ import { CheckCircleIcon } from '../components/Icons'
 import styles from './Contact.module.css'
 
 const INITIAL = {
-  name: '', email: '', phone: '', event: '', date: '', guests: '', message: '',
+  name: '', email: '', phone: '', location: '', event: '', date: '', guests: '', message: '',
 }
 
 export default function Contact() {
@@ -16,6 +16,7 @@ export default function Contact() {
     const e = {}
     if (!form.name.trim()) e.name = 'Name is required.'
     if (!form.email.trim() || !/\S+@\S+\.\S+/.test(form.email)) e.email = 'Valid email is required.'
+    if (!form.location) e.location = 'Please select your location.'
     if (!form.event) e.event = 'Please select an event type.'
     if (!form.message.trim()) e.message = 'Tell us a little about your event.'
     return e
@@ -59,8 +60,9 @@ export default function Contact() {
               </p>
 
               <div className={styles.infoItems}>
-                <InfoItem icon={<Mail size={18} strokeWidth={1.75} />} label="Email Us" value="hello@islandgraze.com" href="mailto:hello@islandgraze.com" />
-                <InfoItem icon={<Phone size={18} strokeWidth={1.75} />} label="Call Us" value="+1 (813)-750-6990" href="tel:+18137506990" />
+                <InfoItem icon={<Mail size={18} strokeWidth={1.75} />} label="Email Us" value="booknow@islandgraze.co" href="mailto:booknow@islandgraze.co" />
+                <InfoItem icon={<Phone size={18} strokeWidth={1.75} />} label="Text Us (US)" value="+1 (813)-750-6990" href="sms:+18137506990" />
+                <InfoItem icon={<Phone size={18} strokeWidth={1.75} />} label="Text Us (Jamaica)" value="+1 (876)-416-2117" href="sms:+18764162117" />
                 <InfoItem icon={<ExternalLink size={18} strokeWidth={1.75} />} label="Instagram" value="@island_graze" href="https://www.instagram.com/island_graze" external />
                 <InfoItem icon={<MapPin size={18} strokeWidth={1.75} />} label="We Serve" value="Tampa, FL & Jamaica" />
               </div>
@@ -123,6 +125,20 @@ export default function Contact() {
                       />
                     </Field>
                   </div>
+
+                  <Field label="Where are you located? *" error={errors.location}>
+                    <select
+                      name="location"
+                      value={form.location}
+                      onChange={handleChange}
+                      className={errors.location ? styles.inputError : ''}
+                    >
+                      <option value="">Select your location</option>
+                      <option value="Tampa / Florida">Tampa / Florida</option>
+                      <option value="Jamaica">Jamaica</option>
+                      <option value="Other">Other</option>
+                    </select>
+                  </Field>
 
                   <div className={styles.row}>
                     <Field label="Phone Number" error={errors.phone}>

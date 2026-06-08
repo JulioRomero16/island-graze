@@ -98,7 +98,7 @@ const SERVICES = [
   {
     code: 'FL',
     title: 'Tampa, Florida',
-    desc: 'Grazing carts, cocktail hour appetizers, and fully customizable boards for events across the Greater Tampa Bay Area.',
+    desc: 'Grazing carts and cocktail hour appetizers with Caribbean island-inspired flavors for events across the Greater Tampa Bay Area.',
     href: '/services',
   },
   {

@@ -1,12 +1,13 @@
 /* ─── Brand Tokens ──────────────────────────────────────── */
 :root {
-  --navy:  #1B3A4B;
-  --gold:  #C9A040;
-  --cream: #F5F0E6;
-  --green: #3A6B35;
-  --navy-light: #254d63;
-  --gold-light: #dbb85a;
-  --cream-dark: #e8e0d0;
+  --navy:  #2D5016;
+  --gold:  #F4C842;
+  --cream: #FDFAF3;
+  --green: #E07B39;
+  --navy-light: #3d6a1f;
+  --gold-light: #f6d467;
+  --cream-dark: #ede8d9;
+  --deep:  #1A3A0A;
 
   --font-heading: 'Playfair Display', Georgia, serif;
   --font-body:    'Lato', system-ui, sans-serif;
@@ -15,9 +16,9 @@
   --radius-lg: 12px;
   --transition: 0.3s ease;
 
-  --shadow-sm: 0 2px 8px rgba(27,58,75,0.12);
-  --shadow-md: 0 8px 24px rgba(27,58,75,0.16);
-  --shadow-lg: 0 20px 48px rgba(27,58,75,0.2);
+  --shadow-sm: 0 2px 8px rgba(45,80,22,0.12);
+  --shadow-md: 0 8px 24px rgba(45,80,22,0.16);
+  --shadow-lg: 0 20px 48px rgba(45,80,22,0.2);
 }
 
 /* ─── Reset & Base ──────────────────────────────────────── */

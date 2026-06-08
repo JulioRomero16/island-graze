@@ -41,14 +41,14 @@ const FL_SERVICES = [
     title: 'Grazing Carts',
     photo: 'https://images.unsplash.com/photo-1555244162-803834f70033?w=800&q=80&auto=format&fit=crop',
     photoAlt: 'Elegant grazing cart at an event',
-    desc: 'A beautifully styled mobile cart that brings the grazing experience directly to your guests. Adorned with tropical greenery and blooms, our carts are a moving centerpiece — perfect for cocktail hours, gallery openings, and milestone celebrations.',
+    desc: 'Forget what you know about charcuterie — this is island flavors in appetizer form. Our styled mobile carts serve jerk meatballs, tropical fruit skewers, fresh orange slices, strawberries, and Caribbean-inspired bite-sized finger foods. Every bite is a mini island experience, assembled into a stunning moving display with a fully customizable theme to match your event.',
     includes: [
-      'Fully styled cart with tropical botanicals',
-      'Rotating selection of cheeses & charcuterie',
-      'Fresh fruit skewers & bite-sized bites',
-      'Dipping sauces & artisan accompaniments',
-      'Fully customizable theme',
-      'Setup and breakdown included',
+      'Jerk meatballs & Caribbean-spiced bites',
+      'Tropical fruit skewers & fresh citrus',
+      'Strawberries, orange slices & seasonal fruit',
+      'Island-inspired finger foods & mini bites',
+      'Charcuterie elements with a Caribbean twist',
+      'Fully customizable theme & setup included',
     ],
   },
   {
@@ -63,20 +63,6 @@ const FL_SERVICES = [
       'Fresh fruit & vegetable displays',
       'Artisan dips & spreads',
       'Styled presentation with florals',
-    ],
-  },
-  {
-    title: 'Customizable Boards',
-    photo: 'https://images.unsplash.com/photo-1528975604071-b4dc52a2d18c?w=800&q=80&auto=format&fit=crop',
-    photoAlt: 'Beautiful charcuterie board close-up',
-    desc: 'From solo date-night boards to party-sized spreads, every board is handcrafted to your vision. Choose your theme, dietary preferences, and flavor profile — we handle the rest with artisan precision and island flair.',
-    includes: [
-      'Custom theme & color palette styling',
-      'Artisan cheese & charcuterie selections',
-      'Seasonal fruits, nuts & honeycomb',
-      'House-made jams & preserves',
-      'Artisan crackers, crostini & breads',
-      'Delivery & setup available in Tampa Bay',
     ],
   },
 ]
@@ -100,8 +86,8 @@ function FloridaSection() {
       <div className="container">
         <div className={styles.sectionIntro}>
           <p className="section-label">Florida Offerings</p>
-          <h2 className="section-title">Elegant grazing for Tampa Bay events</h2>
-          <p className="section-subtitle">
+          <h2 className="section-title" style={{ color: 'var(--cream)' }}>Elegant grazing for Tampa Bay events</h2>
+          <p className="section-subtitle" style={{ color: 'rgba(253,250,243,0.65)' }}>
             Whether you're hosting an intimate gathering or a grand celebration,
             our Tampa Bay offerings bring island-inspired artistry to your event.
           </p>

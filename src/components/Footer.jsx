@@ -42,7 +42,7 @@ export default function Footer() {
         <div className={styles.col}>
           <h4 className={styles.colTitle}>Services</h4>
           <ul className={styles.links}>
-            {['Grazing Carts', 'Cocktail Hour Appetizers', 'Customizable Boards', 'Full-Service Catering'].map(s => (
+            {['Grazing Carts', 'Cocktail Hour Appetizers', 'Full-Service Catering'].map(s => (
               <li key={s}><Link to="/services" className={styles.link}>{s}</Link></li>
             ))}
           </ul>
@@ -54,7 +54,7 @@ export default function Footer() {
           <ul className={styles.contactList}>
             <li>
               <span className={styles.contactIcon}><MailIcon size={15} /></span>
-              <a href="mailto:hello@islandgraze.com" className={styles.link}>hello@islandgraze.com</a>
+              <a href="mailto:booknow@islandgraze.co" className={styles.link}>booknow@islandgraze.co</a>
             </li>
             <li>
               <span className={styles.contactIcon}><PhoneIcon size={15} /></span>
