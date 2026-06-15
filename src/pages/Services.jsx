@@ -9,6 +9,7 @@ export default function Services() {
       <PageHero />
       <FloridaSection />
       <JamaicaSection />
+      <PrivateVillaSection />
       <ProcessSection />
     </>
   )
@@ -42,12 +43,12 @@ const FL_SERVICES = [
     photo: 'https://images.unsplash.com/photo-1555244162-803834f70033?w=800&q=80&auto=format&fit=crop',
     photoAlt: 'Elegant grazing cart at an event',
     desc: 'Forget what you know about charcuterie — this is island flavors in appetizer form. Our styled mobile carts serve jerk meatballs, tropical fruit skewers, fresh orange slices, strawberries, and Caribbean-inspired bite-sized finger foods. Every bite is a mini island experience, assembled into a stunning moving display with a fully customizable theme to match your event.',
+    openingLine: "Let's sit down and create a custom cart.",
     includes: [
-      'Jerk meatballs & Caribbean-spiced bites',
+      'Jerk meatballs & Jamaican-style fritters',
+      'Selection of island-inspired appetizers',
       'Tropical fruit skewers & fresh citrus',
-      'Strawberries, orange slices & seasonal fruit',
-      'Island-inspired finger foods & mini bites',
-      'Charcuterie elements with a Caribbean twist',
+      'Caribbean-spiced finger foods & mini bites',
       'Fully customizable theme & setup included',
     ],
   },
@@ -86,7 +87,7 @@ function FloridaSection() {
       <div className="container">
         <div className={styles.sectionIntro}>
           <p className="section-label">Florida Offerings</p>
-          <h2 className="section-title" style={{ color: 'var(--cream)' }}>Elegant grazing for Tampa Bay events</h2>
+          <h2 className="section-title" style={{ color: 'var(--cream)' }}>Grazing for Tampa Bay events</h2>
           <p className="section-subtitle" style={{ color: 'rgba(253,250,243,0.65)' }}>
             Whether you're hosting an intimate gathering or a grand celebration,
             our Tampa Bay offerings bring island-inspired artistry to your event.
@@ -96,13 +97,11 @@ function FloridaSection() {
         <div className={styles.flCards}>
           {FL_SERVICES.map(s => (
             <div key={s.title} className={styles.flCard}>
-              <div className={styles.flCardPhoto}>
-                <img src={s.photo} alt={s.photoAlt} loading="lazy" />
-              </div>
               <h3 className={styles.flCardTitle}>{s.title}</h3>
               <p className={styles.flCardDesc}>{s.desc}</p>
               <div className={styles.includesList}>
                 <p className={styles.includesLabel}>What's Included</p>
+                {s.openingLine && <p className={styles.openingLine}>{s.openingLine}</p>}
                 <ul>
                   {s.includes.map(item => (
                     <li key={item}><span className={styles.check}>+</span>{item}</li>
@@ -316,6 +315,27 @@ function JmField({ label, error, children }) {
       {children}
       {error && <span className={styles.fieldError}>{error}</span>}
     </div>
+  )
+}
+
+/* ─── Private Villa Section ─────────────────────────────── */
+function PrivateVillaSection() {
+  return (
+    <section className={styles.villaSection}>
+      <div className="container">
+        <div className={styles.villaCard}>
+          <p className="section-label">Jamaica – Private Catering</p>
+          <h2 className={styles.villaTitle}>Private Villa & Estate Catering</h2>
+          <p className={styles.villaDesc}>
+            Looking for an intimate catering experience? We bring the full Island Graze
+            experience directly to your villa, estate, or private residence in Jamaica.
+            Perfect for exclusive gatherings, family celebrations, and luxury retreats —
+            fully customized to your vision.
+          </p>
+          <Link to="/contact" className="btn btn-primary">Request a Quote</Link>
+        </div>
+      </div>
+    </section>
   )
 }
 

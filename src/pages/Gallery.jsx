@@ -1,37 +1,25 @@
 import { useState } from 'react'
 import { ZoomIcon } from '../components/Icons'
 import styles from './Gallery.module.css'
+import event1 from '../assets/gallery/event-1.jpg.jpeg'
+import event2 from '../assets/gallery/event-2.jpg.JPG'
+import event4 from '../assets/gallery/event-4.jpg.JPG'
 
 const PHOTOS = [
   {
     id: 1,
-    src: 'https://images.unsplash.com/photo-1576097449798-7c7f90e1248a?w=900&q=80&auto=format&fit=crop',
-    alt: 'Artisan charcuterie board with cured meats and cheeses',
+    src: event1,
+    alt: 'Island Graze event — catering spread',
   },
   {
     id: 2,
-    src: 'https://images.unsplash.com/photo-1528975604071-b4dc52a2d18c?w=900&q=80&auto=format&fit=crop',
-    alt: 'Elegant cheese and charcuterie selection',
+    src: event2,
+    alt: 'Island Graze event — grazing display',
   },
   {
     id: 3,
-    src: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=900&q=80&auto=format&fit=crop',
-    alt: 'Colorful tropical food spread',
-  },
-  {
-    id: 4,
-    src: 'https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=900&q=80&auto=format&fit=crop',
-    alt: 'Beautiful grazing table food spread',
-  },
-  {
-    id: 5,
-    src: 'https://images.unsplash.com/photo-1546069901-522a6a8ee19c?w=900&q=80&auto=format&fit=crop',
-    alt: 'Fresh fruit and vegetable arrangement',
-  },
-  {
-    id: 6,
-    src: 'https://images.unsplash.com/photo-1551326844-4df70f2d7ef8?w=900&q=80&auto=format&fit=crop',
-    alt: 'Fresh fruit platter with tropical selection',
+    src: event4,
+    alt: 'Island Graze event — food presentation',
   },
 ]
 

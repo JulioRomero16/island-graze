@@ -449,6 +449,43 @@
   max-width: 280px;
 }
 
+/* ─── Opening Line (Grazing Carts) ──────────────────────── */
+.openingLine {
+  font-size: 0.875rem;
+  color: rgba(253,250,243,0.75);
+  font-style: italic;
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+/* ─── Private Villa Section ─────────────────────────────── */
+.villaSection {
+  background: var(--navy);
+  padding: 0 0 100px;
+}
+
+.villaCard {
+  background: rgba(244,200,66,0.08);
+  border: 1px solid rgba(244,200,66,0.25);
+  border-radius: var(--radius-lg);
+  padding: 56px 64px;
+}
+
+.villaTitle {
+  font-family: var(--font-heading);
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  color: var(--cream);
+  margin: 10px 0 20px;
+}
+
+.villaDesc {
+  font-size: 1rem;
+  color: rgba(253,250,243,0.7);
+  line-height: 1.8;
+  max-width: 640px;
+  margin-bottom: 32px;
+}
+
 /* ─── Process ───────────────────────────────────────────── */
 .process {
   padding: 100px 0;

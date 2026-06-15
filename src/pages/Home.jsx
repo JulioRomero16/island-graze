@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { Sparkles } from 'lucide-react'
 import styles from './Home.module.css'
+import aboutPhoto from '../assets/gallery/event-3.jpg.JPG'
 
 export default function Home() {
   return (
@@ -24,8 +25,7 @@ function HeroSection() {
           <em>the islands</em> to your table.
         </h1>
         <p className={styles.heroSub}>
-          Artisan charcuterie boards, grazing carts, and showstopping grazing
-          tables crafted with Caribbean flair for your most memorable moments.
+          Jamaican-inspired charcuterie appetizers, grazing carts, and show-stopping catering served with Jamaican flair for your most memorable moments.
         </p>
         <div className={styles.heroBtns}>
           <Link to="/services" className="btn btn-primary">Explore Services</Link>
@@ -55,8 +55,8 @@ function AboutSection() {
           <div className={styles.aboutImg}>
             <div className={styles.imgFrame}>
               <img
-                src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=700&q=80&auto=format&fit=crop"
-                alt="Elegant charcuterie and grazing spread"
+                src={aboutPhoto}
+                alt="Jehanne smiling behind the Island Graze catering table"
                 loading="lazy"
               />
             </div>
