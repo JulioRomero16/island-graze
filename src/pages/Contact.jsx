@@ -62,7 +62,7 @@ export default function Contact() {
               <div className={styles.infoItems}>
                 <InfoItem icon={<Mail size={18} strokeWidth={1.75} />} label="Email Us" value="booknow@islandgraze.co" href="mailto:booknow@islandgraze.co" />
                 <InfoItem icon={<Phone size={18} strokeWidth={1.75} />} label="Text Us (US)" value="+1 (813)-750-6990" href="sms:+18137506990" />
-                <InfoItem icon={<Phone size={18} strokeWidth={1.75} />} label="Text Us (Jamaica)" value="+1 (876)-416-2117" href="sms:+18764162117" />
+                <InfoItem icon={<Phone size={18} strokeWidth={1.75} />} label="Text Us (Jamaica)" value="+1 (876)-419-2117" href="sms:+18764192117" />
                 <InfoItem icon={<ExternalLink size={18} strokeWidth={1.75} />} label="Instagram" value="@island_graze" href="https://www.instagram.com/island_graze" external />
                 <InfoItem icon={<MapPin size={18} strokeWidth={1.75} />} label="We Serve" value="Tampa, FL & Jamaica" />
               </div>

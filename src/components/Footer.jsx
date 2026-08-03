@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { MailIcon, PhoneIcon, PinIcon, InstagramIcon } from './Icons'
+import { MailIcon, PhoneIcon, PinIcon, InstagramIcon, TikTokIcon } from './Icons'
 import styles from './Footer.module.css'
 
 export default function Footer() {
@@ -25,6 +25,15 @@ export default function Footer() {
             >
               <InstagramIcon size={20} />
             </a>
+            <a
+              href="https://www.tiktok.com/@island_graze"
+              target="_blank"
+              rel="noreferrer"
+              className={styles.socialLink}
+              aria-label="TikTok"
+            >
+              <TikTokIcon size={20} />
+            </a>
           </div>
         </div>
 
@@ -42,8 +51,12 @@ export default function Footer() {
         <div className={styles.col}>
           <h4 className={styles.colTitle}>Services</h4>
           <ul className={styles.links}>
-            {['Grazing Carts', 'Cocktail Hour Appetizers', 'Full-Service Catering'].map(s => (
-              <li key={s}><Link to="/services" className={styles.link}>{s}</Link></li>
+            {[
+              ['Grazing Carts', '/services#grazing-carts'],
+              ['Cocktail Hour Appetizers', '/services#cocktail-hour'],
+              ['Full-Service Catering', '/services#jamaica-catering'],
+            ].map(([label, path]) => (
+              <li key={label}><Link to={path} className={styles.link}>{label}</Link></li>
             ))}
           </ul>
         </div>

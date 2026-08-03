@@ -1,9 +1,21 @@
-import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { useState, useEffect } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 import { CheckCircleIcon } from '../components/Icons'
 import styles from './Services.module.css'
 
+
 export default function Services() {
+  const { hash } = useLocation()
+
+  useEffect(() => {
+    if (!hash) return
+    const el = document.querySelector(hash)
+    if (!el) return
+    // Small delay lets the page paint before scrolling
+    const t = setTimeout(() => el.scrollIntoView({ behavior: 'smooth', block: 'start' }), 80)
+    return () => clearTimeout(t)
+  }, [hash])
+
   return (
     <>
       <PageHero />
@@ -39,6 +51,7 @@ function PageHero() {
 /* ─── Florida Section ───────────────────────────────────── */
 const FL_SERVICES = [
   {
+    id: 'grazing-carts',
     title: 'Grazing Carts',
     photo: 'https://images.unsplash.com/photo-1555244162-803834f70033?w=800&q=80&auto=format&fit=crop',
     photoAlt: 'Elegant grazing cart at an event',
@@ -53,10 +66,11 @@ const FL_SERVICES = [
     ],
   },
   {
+    id: 'cocktail-hour',
     title: 'Cocktail Hour Appetizers',
     photo: 'https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=800&q=80&auto=format&fit=crop',
     photoAlt: 'Elegant cocktail hour food spread',
-    desc: 'Elevate your cocktail hour with elegant passed bites and curated grazing stations. From bruschetta boards to mini charcuterie cones, we design offerings that pair beautifully with your beverage program and keep guests mingling.',
+    desc: 'Elevate your cocktail hour with elegant passed bites and curated grazing stations. From Irie boards to mini charcuterie cones, we design offerings included with your themed beverage selection.',
     includes: [
       'Passed bite-sized appetizers',
       'Mini charcuterie cones & cups',
@@ -96,7 +110,7 @@ function FloridaSection() {
 
         <div className={styles.flCards}>
           {FL_SERVICES.map(s => (
-            <div key={s.title} className={styles.flCard}>
+            <div key={s.title} id={s.id} className={styles.flCard}>
               <h3 className={styles.flCardTitle}>{s.title}</h3>
               <p className={styles.flCardDesc}>{s.desc}</p>
               <div className={styles.includesList}>
@@ -170,7 +184,7 @@ function JamaicaSection() {
   }
 
   return (
-    <section className={styles.jamaicaSection}>
+    <section id="jamaica-catering" className={styles.jamaicaSection}>
       {/* Location banner */}
       <div className={styles.locationBannerJm}>
         <div className="container">
@@ -191,15 +205,15 @@ function JamaicaSection() {
             <p className="section-label">Full-Service Catering</p>
             <h2 className={styles.jmTitle}>Complete catering for every occasion</h2>
             <p className={styles.jmDesc}>
-              In Jamaica, Island Graze offers a comprehensive catering experience that goes
-              beyond grazing. From intimate private dinners to large-scale weddings and corporate
-              events, we design bespoke food experiences that reflect the richness of Caribbean
-              culture and the artistry of fine dining.
+              In Jamaica, Blue Marlin continues the culinary legacy with the Island Graze flair.
+              Together, we bring a comprehensive catering experience to your event — from intimate
+              private dinners to large-scale weddings and corporate events. We customize every
+              detail to your needs, creating your most magical moments.
             </p>
             <p className={styles.jmDesc}>
-              Our Jamaica team handles every detail — from concept and menu planning through
-              to setup, service, and breakdown — so you can be fully present for your event.
-              Every experience is tailored to your guest count, venue, and vision.
+              Our Jamaica team works hand in hand with talented local vendors — from setup and
+              décor to menu planning and service — so every element of your event reflects the
+              creative spirit and warmth of the island.
             </p>
 
             <div className={styles.jmOccasions}>
@@ -321,7 +335,7 @@ function JmField({ label, error, children }) {
 /* ─── Private Villa Section ─────────────────────────────── */
 function PrivateVillaSection() {
   return (
-    <section className={styles.villaSection}>
+    <section id="private-villa" className={styles.villaSection}>
       <div className="container">
         <div className={styles.villaCard}>
           <p className="section-label">Jamaica – Private Catering</p>

@@ -1,3 +1,11 @@
+/* Offset scroll targets so fixed navbar doesn't cover them */
+:global(#grazing-carts),
+:global(#cocktail-hour),
+:global(#jamaica-catering),
+:global(#private-villa) {
+  scroll-margin-top: 90px;
+}
+
 /* ─── Hero ──────────────────────────────────────────────── */
 .hero {
   background: linear-gradient(160deg, #1A3A0A 0%, #2D5016 100%);
@@ -120,7 +128,7 @@
 /* Cards grid */
 .flCards {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 24px;
   margin-bottom: 56px;
   align-items: stretch;

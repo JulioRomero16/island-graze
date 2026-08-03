@@ -1,26 +1,22 @@
 import { useState } from 'react'
 import { ZoomIcon } from '../components/Icons'
 import styles from './Gallery.module.css'
-import event1 from '../assets/gallery/event-1.jpg.jpeg'
-import event2 from '../assets/gallery/event-2.jpg.JPG'
-import event4 from '../assets/gallery/event-4.jpg.JPG'
+import board1 from '../assets/gallery/board-1.jpeg'
+import board2 from '../assets/gallery/board-2.jpeg'
+import board3 from '../assets/gallery/board-3.jpeg'
+import board4 from '../assets/gallery/board-4.jpg'
+import board5 from '../assets/gallery/board-5.jpg'
+import board6 from '../assets/gallery/board-6.JPG'
+import cartMain from '../assets/gallery/cart-main.png'
 
 const PHOTOS = [
-  {
-    id: 1,
-    src: event1,
-    alt: 'Island Graze event — catering spread',
-  },
-  {
-    id: 2,
-    src: event2,
-    alt: 'Island Graze event — grazing display',
-  },
-  {
-    id: 3,
-    src: event4,
-    alt: 'Island Graze event — food presentation',
-  },
+  { id: 1, src: board1, alt: 'Island Graze — artisan board' },
+  { id: 2, src: board2, alt: 'Island Graze — grazing board' },
+  { id: 3, src: board3, alt: 'Island Graze — styled spread' },
+  { id: 4, src: board4, alt: 'Island Graze — charcuterie display' },
+  { id: 5, src: board5, alt: 'Island Graze — tropical board' },
+  { id: 6, src: board6, alt: 'Island Graze — island-inspired platter' },
+  { id: 7, src: cartMain, alt: 'Island Graze — grazing cart' },
 ]
 
 export default function Gallery() {

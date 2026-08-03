@@ -111,7 +111,7 @@ const SERVICES = [
     lucideIcon: <Sparkles size={20} strokeWidth={2.5} color="var(--navy)" />,
     title: 'Custom Experiences',
     desc: 'Every offering is tailored to your event. Tell us your vision and we will craft a grazing experience around it.',
-    href: '/contact',
+    href: '/services',
   },
 ]
 
