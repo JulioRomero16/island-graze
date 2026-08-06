@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import ScrollToTop from './components/ScrollToTop'
+import EmailPopup from './components/EmailPopup'
 import Home from './pages/Home'
 import Services from './pages/Services'
 import Gallery from './pages/Gallery'
@@ -21,6 +22,7 @@ export default function App() {
         </Routes>
       </main>
       <Footer />
+      <EmailPopup />
     </>
   )
 }

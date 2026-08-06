@@ -1,0 +1,137 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(26, 58, 10, 0.72);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+.modal {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  background: var(--cream);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  padding: 48px 36px 36px;
+  text-align: center;
+  animation: popIn 0.35s ease;
+}
+
+.close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--navy);
+  border: none;
+  transition: background var(--transition);
+}
+.close:hover {
+  background: var(--cream-dark);
+}
+
+.headline {
+  font-size: 1.6rem;
+  color: var(--navy);
+  margin-bottom: 12px;
+}
+
+.subtext {
+  font-size: 0.95rem;
+  color: #4a6070;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.field {
+  margin-bottom: 16px;
+  text-align: left;
+}
+
+.field input {
+  width: 100%;
+  padding: 13px 16px;
+  border: 2px solid var(--cream-dark);
+  border-radius: var(--radius);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--navy);
+  background: #fff;
+  transition: border-color var(--transition);
+}
+.field input:focus {
+  outline: none;
+  border-color: var(--gold);
+}
+
+.inputErr {
+  border-color: #d9534f !important;
+}
+
+.fieldError {
+  display: block;
+  margin-top: 6px;
+  font-size: 0.8rem;
+  color: #d9534f;
+}
+
+.submit {
+  width: 100%;
+  padding: 14px 32px;
+  border-radius: var(--radius);
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  background: var(--gold);
+  color: var(--navy);
+  border: 2px solid var(--gold);
+  transition: all var(--transition);
+}
+.submit:hover:not(:disabled) {
+  background: var(--gold-light);
+  border-color: var(--gold-light);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+.submit:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.successState .headline {
+  margin-bottom: 12px;
+}
+.successState .subtext {
+  margin-bottom: 0;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes popIn {
+  from { opacity: 0; transform: scale(0.94) translateY(8px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+@media (max-width: 480px) {
+  .modal {
+    padding: 40px 24px 28px;
+  }
+  .headline {
+    font-size: 1.35rem;
+  }
+}

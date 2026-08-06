@@ -20,8 +20,8 @@ export default function Services() {
     <>
       <PageHero />
       <FloridaSection />
-      <JamaicaSection />
       <PrivateVillaSection />
+      <JamaicaSection />
       <ProcessSection />
     </>
   )
