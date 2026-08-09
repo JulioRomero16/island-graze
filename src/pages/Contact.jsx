@@ -4,7 +4,7 @@ import { CheckCircleIcon } from '../components/Icons'
 import styles from './Contact.module.css'
 
 const INITIAL = {
-  name: '', email: '', phone: '', location: '', event: '', date: '', guests: '', message: '',
+  name: '', email: '', phone: '', location: '', event: '', date: '', guests: '', discountCode: '', message: '',
 }
 
 export default function Contact() {
@@ -183,6 +183,16 @@ export default function Contact() {
                       </select>
                     </Field>
                   </div>
+
+                  <Field label="Discount Code (optional)" error={errors.discountCode}>
+                    <input
+                      type="text"
+                      name="discountCode"
+                      placeholder="Enter your discount code here"
+                      value={form.discountCode}
+                      onChange={handleChange}
+                    />
+                  </Field>
 
                   <Field label="Tell Us About Your Event *" error={errors.message}>
                     <textarea

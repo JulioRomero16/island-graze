@@ -16,14 +16,14 @@ export default function EmailPopup() {
   const [error, setError] = useState('')
 
   useEffect(() => {
-    if (localStorage.getItem(STORAGE_KEY)) return
+    if (sessionStorage.getItem(STORAGE_KEY)) return
     const t = setTimeout(() => setVisible(true), DELAY_MS)
     return () => clearTimeout(t)
   }, [])
 
   const dismiss = () => {
     setVisible(false)
-    localStorage.setItem(STORAGE_KEY, 'true')
+    sessionStorage.setItem(STORAGE_KEY, 'true')
   }
 
   const handleSubmit = async e => {
@@ -50,7 +50,7 @@ export default function EmailPopup() {
         { method: 'POST', mode: 'no-cors' }
       )
       setStatus('success')
-      localStorage.setItem(STORAGE_KEY, 'true')
+      sessionStorage.setItem(STORAGE_KEY, 'true')
     } catch {
       setStatus('error')
       setError('Something went wrong — please try again.')
