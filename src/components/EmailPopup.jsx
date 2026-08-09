@@ -5,10 +5,6 @@ import styles from './EmailPopup.module.css'
 const STORAGE_KEY = 'ig_discount_popup_seen'
 const DELAY_MS = 8000
 
-const MAILCHIMP_U = import.meta.env.VITE_MAILCHIMP_U
-const MAILCHIMP_AUDIENCE_ID = import.meta.env.VITE_MAILCHIMP_AUDIENCE_ID
-const MAILCHIMP_SERVER_PREFIX = import.meta.env.VITE_MAILCHIMP_SERVER_PREFIX
-
 export default function EmailPopup() {
   const [visible, setVisible] = useState(false)
   const [email, setEmail] = useState('')
@@ -36,19 +32,12 @@ export default function EmailPopup() {
     setStatus('submitting')
 
     try {
-      const params = new URLSearchParams({
-        u: MAILCHIMP_U,
-        id: MAILCHIMP_AUDIENCE_ID,
-        EMAIL: email,
+      const res = await fetch('/.netlify/functions/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
       })
-      // Mailchimp's public list-subscribe endpoint (same one embedded signup
-      // forms use) accepts unauthenticated form submissions, so no API key
-      // is needed or exposed here. The request is opaque under no-cors, so
-      // a completed request is treated as success.
-      await fetch(
-        `https://${MAILCHIMP_SERVER_PREFIX}.list-manage.com/subscribe/post?${params.toString()}`,
-        { method: 'POST', mode: 'no-cors' }
-      )
+      if (!res.ok) throw new Error('Subscribe request failed')
       setStatus('success')
       sessionStorage.setItem(STORAGE_KEY, 'true')
     } catch {
