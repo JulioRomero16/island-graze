@@ -76,7 +76,7 @@ export default function EmailPopup() {
           <div className={styles.successState}>
             <h3 id="popup-headline" className={styles.headline}>You're in!</h3>
             <p className={styles.subtext}>
-              Your discount code is <strong>ISLAND10</strong> — we'll also send it to your email!
+              Your discount code is <strong>ISLAND10</strong> — save it and mention it when you contact us to book your event!
             </p>
           </div>
         ) : (
