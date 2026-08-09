@@ -13,5 +13,22 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+
+    <!--
+      Static, hidden mirror of the Contact page form so Netlify's build-time
+      bot can detect it — Netlify Forms only scans the built static HTML, not
+      the React app's client-rendered DOM.
+    -->
+    <form name="contact" data-netlify="true" hidden>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="text" name="location" />
+      <input type="tel" name="phone" />
+      <input type="date" name="date" />
+      <input type="text" name="event" />
+      <input type="text" name="guests" />
+      <input type="text" name="discountCode" />
+      <textarea name="message"></textarea>
+    </form>
   </body>
 </html>

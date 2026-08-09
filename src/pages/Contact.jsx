@@ -7,10 +7,17 @@ const INITIAL = {
   name: '', email: '', phone: '', location: '', event: '', date: '', guests: '', discountCode: '', message: '',
 }
 
+const encode = (data) =>
+  Object.keys(data)
+    .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
+    .join('&')
+
 export default function Contact() {
   const [form, setForm] = useState(INITIAL)
   const [errors, setErrors] = useState({})
   const [submitted, setSubmitted] = useState(false)
+  const [submitting, setSubmitting] = useState(false)
+  const [submitError, setSubmitError] = useState('')
 
   const validate = () => {
     const e = {}
@@ -28,11 +35,25 @@ export default function Contact() {
     if (errors[name]) setErrors(er => ({ ...er, [name]: '' }))
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     const errs = validate()
     if (Object.keys(errs).length) { setErrors(errs); return }
-    setSubmitted(true)
+
+    setSubmitError('')
+    setSubmitting(true)
+    try {
+      await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: encode({ 'form-name': 'contact', ...form }),
+      })
+      setSubmitted(true)
+    } catch {
+      setSubmitError('Something went wrong — please try again or email us directly.')
+    } finally {
+      setSubmitting(false)
+    }
   }
 
   return (
@@ -100,7 +121,14 @@ export default function Contact() {
               {submitted ? (
                 <SuccessMessage onReset={() => { setForm(INITIAL); setSubmitted(false) }} />
               ) : (
-                <form className={styles.form} onSubmit={handleSubmit} noValidate>
+                <form
+                  className={styles.form}
+                  name="contact"
+                  data-netlify="true"
+                  onSubmit={handleSubmit}
+                  noValidate
+                >
+                  <input type="hidden" name="form-name" value="contact" />
                   <h3 className={styles.formTitle}>Book Your Experience</h3>
 
                   <div className={styles.row}>
@@ -205,8 +233,10 @@ export default function Contact() {
                     />
                   </Field>
 
-                  <button type="submit" className={`btn btn-primary ${styles.submitBtn}`}>
-                    Send Inquiry
+                  {submitError && <span className={styles.error}>{submitError}</span>}
+
+                  <button type="submit" className={`btn btn-primary ${styles.submitBtn}`} disabled={submitting}>
+                    {submitting ? 'Sending…' : 'Send Inquiry'}
                   </button>
                   <p className={styles.formNote}>We respond within 24 hours. No spam, ever.</p>
                 </form>
