@@ -314,9 +314,9 @@
 
 .cardCode {
   font-family: var(--font-body);
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 1.5px;
+  font-size: 1.1rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
   color: var(--navy);
   line-height: 1;
 }
